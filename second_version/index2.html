@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Archive</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+        h1 {
+            color: #4169E1;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #4169E1;
+            padding: 10px 0;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 15px;
+        }
+        nav a:hover {
+            background-color: #fff;
+            color: #4169E1;
+            border-radius: 5px;
+        }
+        .image-container {
+            display: inline-block;
+            position: relative;
+        }
+        figure img {
+            width: 300px;
+            height: auto;
+        }
+    </style>
+    <script>
+        let currentDogImageIndex = 0;
+        let currentCatImageIndex = 0;
+        const dogImages = ['dog-image1.jpg', 'dog-image2.jpg', 'dog-image3.jpg'];
+        const catImages = ['cat-image1.jpg', 'cat-image2.jpg', 'cat-image3.jpg'];
+
+        function changeImage(isDog, increment) {
+            if (isDog) {
+                currentDogImageIndex += increment;
+                if (currentDogImageIndex < 0) {
+                    currentDogImageIndex = dogImages.length - 1;
+                } else if (currentDogImageIndex >= dogImages.length) {
+                    currentDogImageIndex = 0;
+                }
+                document.getElementById('dog-image').src = dogImages[currentDogImageIndex];
+            } else {
+                currentCatImageIndex += increment;
+                if (currentCatImageIndex < 0) {
+                    currentCatImageIndex = catImages.length - 1;
+                } else if (currentCatImageIndex >= catImages.length) {
+                    currentCatImageIndex = 0;
+                }
+                document.getElementById('cat-image').src = catImages[currentCatImageIndex];
+            }
+        }
+    </script>
+</head>
+<body>
+<h1>Animal Archive</h1>
+<nav>
+    <a href="index2.html">Home</a>
+    <a href="Dogs2.html">Dogs</a>
+    <a href="Cats2.html">Cats</a>
+    <a href="Other.html">Other</a>
+</nav>
+<label for="have-animal">Do you have an animal?</label>
+<input type="checkbox" id="have-animal">
+<p><a href="Dogs.html">View information on dogs</a></p>
+<figure class="image-container">
+    <a href="Dogs.html">
+        <img id="dog-image" src="dog-image1.jpg" alt="Dog Image">
+    </a>
+    <button onclick="changeImage(true, -1)">Previous</button>
+    <button onclick="changeImage(true, 1)">Next</button>
+</figure>
+<p>Interesting facts about dog breeds:</p>
+<ul>
+    <li>The Basenji, an African breed, is known as the "barkless" dog.</li>
+    <li>The Dalmatian breed is born without spots and develops them as they grow older.</li>
+    <li>Chihuahuas, the smallest breed, are believed to have been sacred to the ancient Aztecs.</li>
+</ul>
+<p><a href="Cats.html">View information on cats</a></p>
+<figure class="image-container">
+    <a href="Cats.html">
+        <img id="cat-image" src="cat-image1.jpg" alt="Cat Image">
+    </a>
+    <button onclick="changeImage(false, -1)">Previous</button>
+    <button onclick="changeImage(false, 1)">Next</button>
+</figure>
+<p>Interesting facts about cat breeds:</p>
+<ul>
+    <li>The Sphynx cat is famous for its hairless appearance.</li>
+
+
+
+
+    <li>There are over 70 recognized cat breeds.</li>
+    <li>Some popular breeds include the Persian, Maine Coon, and Siamese.</li>
+    <li>The Savannah cat is a hybrid breed created by crossing a domestic cat with a serval.</li>
+</ul>
+</body>
+</html>
