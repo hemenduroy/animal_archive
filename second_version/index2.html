@@ -53,7 +53,7 @@
                 } else if (currentDogImageIndex >= dogImages.length) {
                     currentDogImageIndex = 0;
                 }
-                document.getElementById('dog-image').src = dogImages[currentDogImageIndex];
+                document.getElementById('dog-image').src = "../images/" + dogImages[currentDogImageIndex];
             } else {
                 currentCatImageIndex += increment;
                 if (currentCatImageIndex < 0) {
@@ -61,7 +61,7 @@
                 } else if (currentCatImageIndex >= catImages.length) {
                     currentCatImageIndex = 0;
                 }
-                document.getElementById('cat-image').src = catImages[currentCatImageIndex];
+                document.getElementById('cat-image').src = "../images/" + catImages[currentCatImageIndex];
             }
         }
     </script>
@@ -79,7 +79,7 @@
 <p><a href="Dogs.html">View information on dogs</a></p>
 <figure class="image-container">
     <a href="Dogs.html">
-        <img id="dog-image" src="dog-image1.jpg" alt="Dog Image">
+        <img id="dog-image" src="../images/dog-image1.jpg" alt="Dog Image">
     </a>
     <button onclick="changeImage(true, -1)">Previous</button>
     <button onclick="changeImage(true, 1)">Next</button>
@@ -93,7 +93,7 @@
 <p><a href="Cats.html">View information on cats</a></p>
 <figure class="image-container">
     <a href="Cats.html">
-        <img id="cat-image" src="cat-image1.jpg" alt="Cat Image">
+        <img id="cat-image" src="../images/cat-image1.jpg" alt="Cat Image">
     </a>
     <button onclick="changeImage(false, -1)">Previous</button>
     <button onclick="changeImage(false, 1)">Next</button>
